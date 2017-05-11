@@ -27,7 +27,9 @@ try:
         buttonPressed = False
         if GPIO.input(12) == False:
             GPIO.output(7, False)
+            os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo info >> /home/pi/SSS400S/status.log")
+            os.system("echo >> /home/pi/SSS400S/status.log")
             my_msg = "info"
             buttonPressed = True
         else:
@@ -35,7 +37,9 @@ try:
             
         if GPIO.input(16) == False:
             GPIO.output(11, False)
+            os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo warning >> /home/pi/SSS400S/status.log")
+            os.system("echo >> /home/pi/SSS400S/status.log")
             my_msg = "warning"
             buttonPressed = True
         else:
@@ -43,7 +47,9 @@ try:
             
         if GPIO.input(18) == False:
             GPIO.output(13, False)
+            os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo major fault >> /home/pi/SSS400S/status.log")
+            os.system("echo >> /home/pi/SSS400S/status.log")
             my_msg = "major fault"
             buttonPressed = True
         else:
@@ -51,7 +57,9 @@ try:
             
         if GPIO.input(22) == False:
             GPIO.output(15, False)
+            os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo critical error >> /home/pi/SSS400S/status.log")
+            os.system("echo >> /home/pi/SSS400S/status.log")
             my_msg = "critical error"
             buttonPressed = True
         else:

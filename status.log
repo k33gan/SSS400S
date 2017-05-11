@@ -8,3 +8,36 @@ critical error
 major fault
 warning
 info
+date
+critical error
+
+date
+major fault
+
+date
+major fault
+
+date
+warning
+
+date
+info
+
+date
+info
+
+Thu May 11 15:45:37 SAST 2017
+critical error
+
+Thu May 11 15:45:37 SAST 2017
+critical error
+
+Thu May 11 15:45:38 SAST 2017
+major fault
+
+Thu May 11 15:45:38 SAST 2017
+warning
+
+Thu May 11 15:45:39 SAST 2017
+info
+
