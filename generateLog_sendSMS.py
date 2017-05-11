@@ -59,17 +59,18 @@ try:
         
         if buttonPressed == True:
             #message = client.messages.create(to=my_cell, from_=my_twilio, body=my_msg)
-            os.system("echo IT WORKS!!! >> /home/pi/SSS400S/status.log")
+            #os.system("echo IT WORKS!!! >> /home/pi/SSS400S/status.log")
+            pass
         
         sleep(0.15)
             
 except KeyboardInterrupt:
     print "\nKeyboard interrupt detected."
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 except:
     print "Unforseen error occured!"
-    GPIO.cleanup()
+    #GPIO.cleanup()
 
 finally:
     print "Closing Program..."
