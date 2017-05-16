@@ -2,6 +2,7 @@
 import RPi.GPIO as GPIO
 from time import sleep
 import os
+
 #from twilio.rest import TwilioRestClient
 #from credentials import account_sid, auth_token, my_cell, my_twilio
 
@@ -30,6 +31,7 @@ try:
             os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo info >> /home/pi/SSS400S/status.log")
             os.system("echo >> /home/pi/SSS400S/status.log")
+            os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "info"
             buttonPressed = True
         else:
