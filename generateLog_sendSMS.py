@@ -3,11 +3,11 @@ import RPi.GPIO as GPIO
 from time import sleep
 import os
 
-#from twilio.rest import TwilioRestClient
-#from credentials import account_sid, auth_token, my_cell, my_twilio
+from twilio.rest import TwilioRestClient
+from credentials import account_sid, auth_token, my_cell, my_twilio
 
 # Find these values at https://twilio.com/user/account
-#client = TwilioRestClient(account_sid, auth_token)
+client = TwilioRestClient(account_sid, auth_token)
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -33,6 +33,7 @@ try:
             os.system("echo >> /home/pi/SSS400S/status.log")
             os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "info"
+            print "\nMessage Sent."
             buttonPressed = True
         else:
             GPIO.output(7, True)
@@ -42,6 +43,7 @@ try:
             os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo warning >> /home/pi/SSS400S/status.log")
             os.system("echo >> /home/pi/SSS400S/status.log")
+            os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "warning"
             buttonPressed = True
         else:
@@ -52,6 +54,7 @@ try:
             os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo major fault >> /home/pi/SSS400S/status.log")
             os.system("echo >> /home/pi/SSS400S/status.log")
+            os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "major fault"
             buttonPressed = True
         else:
@@ -62,15 +65,16 @@ try:
             os.system("date >> /home/pi/SSS400S/status.log")
             os.system("echo critical error >> /home/pi/SSS400S/status.log")
             os.system("echo >> /home/pi/SSS400S/status.log")
+            os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "critical error"
             buttonPressed = True
         else:
             GPIO.output(15, True)
         
         if buttonPressed == True:
-            #message = client.messages.create(to=my_cell, from_=my_twilio, body=my_msg)
+            message = client.messages.create(to=my_cell, from_=my_twilio, body=my_msg)
             #os.system("echo IT WORKS!!! >> /home/pi/SSS400S/status.log")
-            pass
+            #pass
         
         sleep(0.15)
             
