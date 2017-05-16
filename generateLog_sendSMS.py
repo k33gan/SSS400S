@@ -33,7 +33,7 @@ try:
             os.system("echo >> /home/pi/SSS400S/status.log")
             os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "info"
-            print "\nMessage Sent."
+            print "Message Sent."
             buttonPressed = True
         else:
             GPIO.output(7, True)
@@ -45,6 +45,7 @@ try:
             os.system("echo >> /home/pi/SSS400S/status.log")
             os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "warning"
+            print "Message Sent."
             buttonPressed = True
         else:
             GPIO.output(11, True)
@@ -56,6 +57,7 @@ try:
             os.system("echo >> /home/pi/SSS400S/status.log")
             os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "major fault"
+            print "Message Sent."
             buttonPressed = True
         else:
             GPIO.output(13, True)
@@ -67,6 +69,7 @@ try:
             os.system("echo >> /home/pi/SSS400S/status.log")
             os.system("sudo python /home/pi/SSS400S/uploadToGit.py")
             my_msg = "critical error"
+            print "Message Sent."
             buttonPressed = True
         else:
             GPIO.output(15, True)
