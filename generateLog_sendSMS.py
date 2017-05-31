@@ -3,11 +3,11 @@ import RPi.GPIO as GPIO
 from time import sleep
 import os
 
-#from twilio.rest import TwilioRestClient
-#from credentials import account_sid, auth_token, my_cell, my_twilio
+from twilio.rest import Client#TwilioRestClient
+from credentials import account_sid, auth_token, my_cell, my_twilio
 
 # Find these values at https://twilio.com/user/account
-#client = TwilioRestClient(account_sid, auth_token)
+client = Client(account_sid, auth_token)#TwilioRestClient(account_sid, auth_token)
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -75,9 +75,9 @@ try:
             GPIO.output(15, True)
         
         if buttonPressed == True:
-            #message = client.messages.create(to=my_cell, from_=my_twilio, body=my_msg)
+            message = client.messages.create(to=my_cell, from_=my_twilio, body=my_msg)
             #os.system("echo IT WORKS!!! >> /home/pi/SSS400S/status.log")
-            pass
+            #pass
         
         sleep(0.15)
             
