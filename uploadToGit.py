@@ -6,7 +6,9 @@ try:
     repo = Repo(repo_dir)
     file_list = [
         'status.log',
-        'generateLog_sendSMS.py'
+        'generateLog_sendSMS.py',
+	'uploadToGit.py',
+	'logrotate.py'
     ]
     commit_message = 'Latest Status'
     repo.index.add(file_list)
@@ -18,7 +20,7 @@ except KeyboardInterrupt:
     print "\nKeyboard interrupt detected."
 
 except:
-    print "Unforseen error occured!"
+    print "Unforseen error occured during upload!"
 
 finally:
-    print "Log Updated..."
+    print "Closing upload program..."

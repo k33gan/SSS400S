@@ -18,7 +18,7 @@ except KeyboardInterrupt:
 	target.close()
 
 except:
-        print "Unforseen error occured!"
+        print "Unforseen error occured during logrotate!"
         target.close()
 
 finally:
