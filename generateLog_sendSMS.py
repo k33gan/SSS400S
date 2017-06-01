@@ -86,7 +86,7 @@ except KeyboardInterrupt:
     #GPIO.cleanup()
 
 except:
-    print "Unforseen error occured!"
+    print "Unforseen error occured during log generation!"
     #GPIO.cleanup()
 
 finally:
